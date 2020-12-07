@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/ModuleLength, Style/For
 module Enumerable
   # 1.my_each
   def my_each
@@ -9,7 +10,7 @@ module Enumerable
 
   # 2. my_each_with_index
   def my_each_with_index
-    for i in (0..self).size- 1
+    for i in (0..self).size - 1
       yield(self[i], i) if block_given?
     end
     self
@@ -96,11 +97,7 @@ module Enumerable
   def my_count(parameter = nil)
     counter = 0
     if block_given?
-      my_each do |x|
-        if yield(x)
-          counter += 1
-        end
-      end
+      my_each { counter += 1 if yield(value) }
       counter
     else
       case parameter
@@ -140,6 +137,7 @@ module Enumerable
     net
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/ModuleLength, Style/For
 
 def multiply_els(parameter)
   parameter.my_inject { |sum, x| sum * x }
