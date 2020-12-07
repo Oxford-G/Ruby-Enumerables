@@ -113,6 +113,7 @@ module Enumerable
   # 8.my_map
   def my_map(parameter = nil)
     return to_enum unless block_given?
+
     result_arr = []
     my_each { |x| result_arr << yield(x) } if parameter.nil?
     my_each { |x| result_arr << parameter.call(x) } unless parameter.nil?
