@@ -20,13 +20,10 @@ module Enumerable
 
   # 3. my_select
   def my_select
-    if block_given?
-      result = []
-      my_each do |value|
-        result << value if yield(value)
-      end
-    else
-      return to_enum
+    return to_enum unless block_given?
+    result = []
+    each do |item|
+      result << item if yield(item)
     end
     result
   end
