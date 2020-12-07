@@ -2,16 +2,18 @@
 module Enumerable
   # 1.my_each
   def my_each
+    return to_enum unless block_given?
     for i in self
-      yield(i) if block_given?
+      yield(i)
     end
     self
   end
 
   # 2. my_each_with_index
   def my_each_with_index
+    return to_enum unless block_given?
     for i in (0..self).size - 1
-      yield(self[i], i) if block_given?
+      yield(self[i], i)
     end
     self
   end
@@ -23,6 +25,8 @@ module Enumerable
       my_each do |value|
         result << value if yield(value)
       end
+    else
+      return to_enum
     end
     result
   end
@@ -64,7 +68,7 @@ module Enumerable
       when Class
         my_each { |x| return true if x.is_a? parameter }
       else
-        my_each { |element| result = true unless element.nil? }
+        my_each { |x| return true if x == parameter }
       end
     end
     result
@@ -97,7 +101,7 @@ module Enumerable
   def my_count(parameter = nil)
     counter = 0
     if block_given?
-      my_each { counter += 1 if yield(value) }
+      my_each { |value| counter += 1 if yield(value) }
       counter
     else
       case parameter

@@ -2,11 +2,11 @@
 
 # Ruby-Enumerables
 
-**Project description.**
+## Project description.
 - This is a Microverse ruby project. Building custormized ruby enumerables
 
-**Built with**
-- Ruby
+## Built with
+- Ruby version 2.9
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ To get a local copy up and running follow these simple example steps.
 - If you're running Windows Operating System, open your command prompt. On Linux, Open your terminal.
 - Change the current working directory to the location where you want the cloned directory to be made. Leave as it is if the current location is where you want the project to be.
 - Type `git clone`, and then paste the URL you copied in Step 3.<br>
-  `$ git clone https://github.com/oxford-g/NYT-webpage-clone.git` <em>Press Enter key</em><br>
+  `git@github.com:Oxford-G/Ruby-Enumerables.git` <em>Press Enter key</em><br>
 - Press Enter. Your local copy will be created.
 
 Please Note that you must have github installed on your PC, this can be done [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03).
@@ -30,7 +30,7 @@ Please Note that you must have github installed on your PC, this can be done [he
 
 ### Prerequisites
 
-Web browser (Chrome/Firefox)
+Ruby
 
 
 ## Author
@@ -39,6 +39,8 @@ Web browser (Chrome/Firefox)
 
 - GitHub: [@OXFORD-G](https://github.com/OXFORD-G)
 - Twitter: [@OXFORD2](https://twitter.com/OXFORD2)
+- Linkdin: [Linkdin](www.linkedin.com/in/chinonso-enekwechi-a96954193)
+
 
 
 ## 🤝 Contributing
