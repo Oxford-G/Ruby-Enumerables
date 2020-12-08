@@ -14,10 +14,11 @@ module Enumerable
   def my_each_with_index
     return to_enum unless block_given?
 
-    for i in (0..self).size - 1
-      yield(self[i], i)
+    index = 0
+    my_each do |item|
+      yield(item, index)
+      index += 1
     end
-    self
   end
 
   # 3. my_select
