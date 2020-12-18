@@ -1,4 +1,4 @@
-require './main'
+require_relative '../main'
 
 describe Enumerable do
   describe '#each' do
@@ -7,12 +7,22 @@ describe Enumerable do
       [1, 2, 3, 4].my_each { |item| result.push(item + 2) }
       expect(result).to eql([3, 4, 5, 6])
     end
+    it 'subtract 1 to each item' do
+      result = []
+      [1, 2, 3, 4].my_each { |item| result.push(item - 1) }
+      expect(result).to eql([0, 1, 2, 3])
+    end
   end
   describe '#each_with_index' do
     it 'Add to each item, their index' do
       result = []
       [1, 2, 3, 4].my_each_with_index { |item, i| result.push(item + i) }
       expect(result).to eql([1, 3, 5, 7])
+    end
+    it 'Subtract to each item, their index' do
+      result = []
+      [1, 2, 3, 4].my_each_with_index { |item, i| result.push(item - i) }
+      expect(result).to eql([1, 1, 1, 1])
     end
   end
   describe '#select' do
@@ -84,6 +94,14 @@ describe Enumerable do
     end
     it 'Returns product of items' do
       expect([1, 2, 3, 4].my_inject(:*)).to eql(24)
+    end
+    it 'Returns product of items times 2' do
+      expect([1, 2, 3, 4].my_inject(2) { |a, b| a * b }).to eql(48)
+    end
+  end
+  describe '#multiply_els' do
+    it 'Returns sum of items' do
+      expect([1, 2, 3, 4].my_inject { |sum, item| sum * item }).to eql(24)
     end
     it 'Returns product of items times 2' do
       expect([1, 2, 3, 4].my_inject(2) { |a, b| a * b }).to eql(48)
