@@ -6,7 +6,9 @@
 - This is a Microverse ruby project. Building custormized ruby enumerables
 
 ## Built with
-- Ruby version 2.9
+- Ruby
+- Linter
+- VScode
 
 ## Getting Started
 
@@ -31,6 +33,9 @@ Please Note that you must have github installed on your PC, this can be done [he
 ### Prerequisites
 
 Ruby
+
+### click on the live server to run the code on REpl.it
+[Live Demo Link](https://repl.it/github/Oxford-G/Ruby-Enumerables)
 
 
 ## Author
